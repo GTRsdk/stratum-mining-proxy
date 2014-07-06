@@ -59,6 +59,67 @@ useful "midstatec" C extension, which significantly speeds up midstate calculati
 just type "make" in midstatec directory. Proxy will auto-detect compiled extension
 on next startup.
 
+Usage
+-------------
+
+usage: mining_proxy.py [-h] [-o HOST] [-p PORT] [-sh STRATUM_HOST]
+                       [-sp STRATUM_PORT] [-oh GETWORK_HOST]
+                       [-gp GETWORK_PORT] [-nm] [-rt] [-cl CUSTOM_LP]
+                       [-cs CUSTOM_STRATUM] [-cu CUSTOM_USER]
+                       [-cp CUSTOM_PASSWORD] [--old-target]
+                       [--blocknotify BLOCKNOTIFY_CMD] [--socks PROXY] [--tor]
+                       [-t] [-v] [-q] [-i PID_FILE] [-l LOG_FILE] [-st]
+
+This proxy allows you to run getwork-based miners against Stratum mining pool.
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -o HOST, --host HOST  Hostname of Stratum mining pool
+  -p PORT, --port PORT  Port of Stratum mining pool
+  -sh STRATUM_HOST, --stratum-host STRATUM_HOST
+                        On which network interface listen for stratum miners.
+                        Use "localhost" for listening on internal IP only.
+  -sp STRATUM_PORT, --stratum-port STRATUM_PORT
+                        Port on which port listen for stratum miners.
+  -oh GETWORK_HOST, --getwork-host GETWORK_HOST
+                        On which network interface listen for getwork miners.
+                        Use "localhost" for listening on internal IP only.
+  -gp GETWORK_PORT, --getwork-port GETWORK_PORT
+                        Port on which port listen for getwork miners. Use
+                        another port if you have bitcoind RPC running on this
+                        machine already.
+  -nm, --no-midstate    Don't compute midstate for getwork. This has
+                        outstanding performance boost, but some old miners
+                        like Diablo don't work without midstate.
+  -rt, --real-target    Propagate >diff1 target to getwork miners. Some miners
+                        work incorrectly with higher difficulty.
+  -cl CUSTOM_LP, --custom-lp CUSTOM_LP
+                        Override URL provided in X-Long-Polling header
+  -cs CUSTOM_STRATUM, --custom-stratum CUSTOM_STRATUM
+                        Override URL provided in X-Stratum header
+  -cu CUSTOM_USER, --custom-user CUSTOM_USER
+                        Use this username for submitting shares
+  -cp CUSTOM_PASSWORD, --custom-password CUSTOM_PASSWORD
+                        Use this password for submitting shares
+  --old-target          Provides backward compatible targets for some
+                        deprecated getwork miners.
+  --blocknotify BLOCKNOTIFY_CMD
+                        Execute command when the best block changes (%s in
+                        BLOCKNOTIFY_CMD is replaced by block hash)
+  --socks PROXY         Use socks5 proxy for upstream Stratum connection,
+                        specify as host:port
+  --tor                 Configure proxy to mine over Tor (requires Tor running
+                        on local machine)
+  -t, --test            Run performance test on startup
+  -v, --verbose         Enable low-level debugging messages
+  -q, --quiet           Make output more quiet
+  -i PID_FILE, --pid-file PID_FILE
+                        Store process pid to the file
+  -l LOG_FILE, --log-file LOG_FILE
+                        Log to specified file
+  -st, --scrypt-target  Calculate targets for scrypt algorithm
+
+
 Contact
 -------
 
