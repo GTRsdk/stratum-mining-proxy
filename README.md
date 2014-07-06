@@ -61,28 +61,27 @@ on next startup.
 
 Usage
 -------------
+usage: mining_proxy.py [-h] [-o HOST] [-p PORT] [-sh STRATUM_HOST]  
+	[-sp STRATUM_PORT] [-oh GETWORK_HOST]  
+	[-gp GETWORK_PORT] [-nm] [-rt] [-cl CUSTOM_LP]  
+	[-cs CUSTOM_STRATUM] [-cu CUSTOM_USER]  
+	[-cp CUSTOM_PASSWORD] [--old-target]  
+	[--blocknotify BLOCKNOTIFY_CMD] [--socks PROXY] [--tor]  
+	[-t] [-v] [-q] [-i PID_FILE] [-l LOG_FILE] [-st]  
 
-usage: mining_proxy.py [-h] [-o HOST] [-p PORT] [-sh STRATUM_HOST]
-                       [-sp STRATUM_PORT] [-oh GETWORK_HOST]
-                       [-gp GETWORK_PORT] [-nm] [-rt] [-cl CUSTOM_LP]
-                       [-cs CUSTOM_STRATUM] [-cu CUSTOM_USER]
-                       [-cp CUSTOM_PASSWORD] [--old-target]
-                       [--blocknotify BLOCKNOTIFY_CMD] [--socks PROXY] [--tor]
-                       [-t] [-v] [-q] [-i PID_FILE] [-l LOG_FILE] [-st]
-
-This proxy allows you to run getwork-based miners against Stratum mining pool.
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -o HOST, --host HOST  Hostname of Stratum mining pool
-  -p PORT, --port PORT  Port of Stratum mining pool
-  -sh STRATUM_HOST, --stratum-host STRATUM_HOST
-                        On which network interface listen for stratum miners.
-                        Use "localhost" for listening on internal IP only.
-  -sp STRATUM_PORT, --stratum-port STRATUM_PORT
-                        Port on which port listen for stratum miners.
-  -oh GETWORK_HOST, --getwork-host GETWORK_HOST
-                        On which network interface listen for getwork miners.
+This proxy allows you to run getwork-based miners against Stratum mining pool.  
+  
+optional arguments:  
+  -h, --help            show this help message and exit  
+  -o HOST, --host HOST  Hostname of Stratum mining pool  
+  -p PORT, --port PORT  Port of Stratum mining pool  
+  -sh STRATUM_HOST, --stratum-host STRATUM_HOST  
+                        On which network interface listen for stratum miners.  
+                        Use "localhost" for listening on internal IP only.  
+  -sp STRATUM_PORT, --stratum-port STRATUM_PORT  
+                        Port on which port listen for stratum miners.  
+  -oh GETWORK_HOST, --getwork-host GETWORK_HOST  
+                        On which network interface listen for getwork miners.  
                         Use "localhost" for listening on internal IP only.
   -gp GETWORK_PORT, --getwork-port GETWORK_PORT
                         Port on which port listen for getwork miners. Use
